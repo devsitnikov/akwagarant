@@ -1,0 +1,189 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto+Condensed:300,300i,400,400i,700,700i&subset=cyrillic');
+body {
+    padding: 0;
+    margin: 0;
+    overflow-x: hidden;
+    font-family: 'Roboto Condensed', sans-serif;
+}
+.top-line {
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 30px;
+}
+.toggle-menu {
+    display: none;
+}
+.logo>img {
+    height: 40px;
+}
+.top-line>.menu>ul>li {
+    display: inline-block;
+    list-style-type: none;
+}
+.top-line>.menu>ul>li>a {
+    color: #000;
+    text-decoration: none;
+    font-size: 1.23em;
+    letter-spacing: 0.7px;
+    text-transform: uppercase;
+    padding-top: 5px;
+    margin: 0 10px;
+}
+.top-line>.menu>ul>li>a:hover {
+    border-top: 2px solid #000;
+}
+.main-header {
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    text-align: center;
+}
+.landing-header {
+    height: calc(100vh - 80px);
+}
+.contacts>.number {
+    font-weight: 400;
+    font-size: 1.38em;
+    padding: 0 15px;
+}
+button.blue-btn {
+    color: #ffffff;
+    background-color: #5ca3ff;
+    border-radius: 3px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    text-transform: uppercase;
+    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.3);
+    display: inline-block;
+    height: 60px;
+    border: 0 none;
+    font-size: 1em;
+    padding-left: 30px;
+    padding-right: 30px;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    font-weight: 700;
+    cursor: pointer;
+    -webkit-appearance: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+button.contact-btn {
+    height: 46px;
+    font-size: 0.9em;
+    padding: 5px 15px;
+    font-weight: 600;
+}
+.header-title {
+    font-size: 2em;
+    letter-spacing: 2px;
+}
+.header-description {
+    font-size: 1.5em;
+    font-weight: 400;
+    letter-spacing: 1.3px;
+}
+.main-header>.content {
+    width: 60%;
+}
+.menu-modal {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: rgba(0,0,0,0.9);
+    color: #fff;
+    text-transform: uppercase;
+    text-align: center;
+    padding-top: 20px;
+}
+.menu-modal>ul>li {
+    list-style-type: none;
+    font-size: 20px;
+    line-height: 40px;
+    font-weight: bold;
+    border-bottom: 1px solid #e3e3e3;
+    padding: 20px;
+}
+.menu-modal>ul>li>a {
+    color: #fff;
+    text-decoration: none;
+}
+.close-modal-menu {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 30px;
+    cursor: pointer;
+}
+.menu-modal {
+    display: none;
+}
+@media (max-width: 1550px) {
+    .top-line>.menu>ul>li>a {
+        letter-spacing: 0;
+        font-size: 1.2em;
+        margin: 0 6px;
+    }
+    .logo>img {
+        height: 35px;
+    }
+    .contacts>.number {
+        font-size: 1.25em;
+    }
+    button.contact-btn {
+        font-size: 0.7em;
+        padding: 5px 10px;
+        height: 43px;
+    }
+}
+
+@media(max-width: 1345px) {
+    button.contact-btn {
+        display: none;
+    }
+    .contacts>.number {
+        font-size: 1.3em;
+    }
+    .main-header>.content {
+        width: 80%;
+    }
+}
+@media (max-width: 1080px) {
+    .top-line>.menu {
+        display: none;
+    }
+    .toggle-menu {
+       display: inline-block;
+       font-size: 1.5em;
+       margin-left: 15px;
+        cursor: pointer;
+    }
+    .contacts>.number {
+        font-size: 1.7em;
+        margin-right: 20px;
+    }
+}
+@media (max-width: 630px) {
+    .logo>img {
+        height: 25px;
+    }
+    .top-line>.contacts>.number {
+        font-size: 1.1em;
+        margin-right: 0;
+    }
+}
