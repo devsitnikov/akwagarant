@@ -12,6 +12,10 @@
     <link rel="stylesheet" href="{{asset('mdbootstrap/css/bootstrap.min.css')}}">
     <link rel="stylesheet" href="{{asset('mdbootstrap/css/mdb.min.css')}}">
     <link rel="stylesheet" href="{{asset('mdbootstrap/css/style.css')}}">
+    <!--[if lt IE 9]>
+    <script src="{{ asset('js/ckfinder/samples/js/html5shiv.min.js') }}"></script>
+    <![endif]-->
+    <link href="{{ asset('js/ckfinder/samples/css/sample.css') }}" rel="stylesheet">
     <title>{{ config('app.name', 'Laravel') }}</title>
 
 
@@ -45,7 +49,7 @@
         <div class="list-group list-group-flush">
             <button type="button" class="btn btn-info">Главная</button>
             <button type="button" class="btn btn-info">Статьи</button>
-            <button type="button" class="btn btn-info">Файлы</button>
+            <a href="{{route('filemanager')}}" type="button" class="btn btn-info">Файлы</a>
             <button type="button" class="btn btn-info">Настройки</button>
         </div>
     </div>
@@ -55,6 +59,8 @@
         @yield('content')
     </div>
 </main>
+
+
         <script src="{{asset('mdbootstrap/js/jquery-3.3.1.min.js')}}"></script>
         <script src="{{asset('mdbootstrap/js/popper.min.js')}}"></script>
         <script src="{{asset('mdbootstrap/js/bootstrap.min.js')}}"></script>
