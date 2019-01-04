@@ -325,6 +325,14 @@ button.contact-btn {
     margin-right: 25px;
     height: 333px;
 }
+.article-body {
+    padding: 120px 30px;
+    font-size: 18px;
+    line-height: 24px;
+    width: 60%;
+    border: 2px solid #e3e3e3;
+    margin: 0 auto;
+}
 @media(max-width: 1345px) {
     button.contact-btn {
         display: none;
