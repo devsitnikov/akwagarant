@@ -15,13 +15,14 @@
 <body>
 
     <div class="top-line">
-        <div class="logo">
+        <div class="logo"><a href="{{route('index')}}">
         <img src="{{asset('svg/logo.svg')}}" alt="Компания Аквагарант">
+            </a>
         </div>
     <div class="menu">
         <ul>
             <li><a href="#">Наши объекты</a></li>
-            <li><a href="#">Статьи</a></li>
+            <li><a href="{{route('blog')}}">Статьи</a></li>
             <li><a href="#">Интернет-магазин</a></li>
             <li><a href="#">Контакты</a></li>
         </ul>
