@@ -17,4 +17,10 @@ Route::get('/blog/{slug}', 'SiteController@article');
 
 Auth::routes();
 
+/**
+ * Роуты для админки
+ */
+Route::group(['prefix'=>'panel', 'middleware'=>'auth', 'namespace' => 'Admin'], function() {
+    Route::get('/', 'AdminController@index');
+});
 Route::get('/home', 'HomeController@index')->name('home');
