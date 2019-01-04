@@ -13,6 +13,7 @@
 
 Route::get('/', 'SiteController@index')->name('index');
 Route::get('/blog', 'SiteController@blog')->name('blog');
+Route::get('/blog/{slug}', 'SiteController@article');
 
 Auth::routes();
 
