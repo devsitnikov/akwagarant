@@ -38,6 +38,24 @@
     </div>
     @yield('content')
 
+    <div id="footer">
+        <div class="footer_contacts">
+            <div class="contact_title">
+                Контакты
+            </div>
+            <div class="contact_item"><i class="fas fa-phone-volume"></i> 8 (473) 251-64-10</div>
+            <div class="contact_item"><i class="far fa-envelope-open"></i> info@akwagarant.ru</div>
+            <div class="contact_title">
+                Режим работы компании
+            </div>
+            <div class="contact_item"><i class="fas fa-stopwatch"></i> Понедельник - Пятница: с 9:00 - 18:00</div>
+            <div class="contact_item"><i class="fas fa-home"></i>  г. Воронеж, ул. Матросова, 6в, 3 Этаж оф. 5</div>
+        </div>
+        <div id="footer_maps">
+            <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Aec4442c709fa9aa0754413ea780077071850565ddefbe303965dbd8eea6dd28b&amp;height=400&amp;lang=ru_RU&amp;scroll=true"></script>
+        </div>
+    </div>
+
 <div class="menu-modal">
     <i class="fas fa-times close-modal-menu"></i>
     <ul>

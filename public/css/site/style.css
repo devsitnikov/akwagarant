@@ -133,6 +133,40 @@ button.contact-btn {
 .menu-modal {
     display: none;
 }
+.service-row {
+    display: flex;
+    margin: 0 auto;
+    margin-bottom: 120px;
+    width: 70%;
+}
+.service-row>div {
+    width: 50%;
+    min-height: 400px;
+}
+.service-img {
+    background-size: cover;
+    background-position: top center;
+    background-repeat: no-repeat;
+}
+.service-text {
+    padding: 25px
+}
+.service-text>b {
+    font-size: 1.8em;
+    margin-bottom: 40px;
+}
+.service-text>ul>li {
+    list-style-type: none;
+    padding-left: 20px;
+    margin-bottom: 10px;
+    font-size: 1.5em;
+}
+.section-title {
+    padding: 40px 10px;
+    text-align: center;
+    font-size: 36px;
+    font-weight: 600;
+}
 @media (max-width: 1550px) {
     .top-line>.menu>ul>li>a {
         letter-spacing: 0;
@@ -150,8 +184,84 @@ button.contact-btn {
         padding: 5px 10px;
         height: 43px;
     }
+    .service-row {
+        width: 80%;
+    }
 }
-
+.wrap-maps-text {
+    max-width: 1170px;
+    padding: 60px 20px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+    width: 100%;
+}
+.wrap-maps-text::before {
+    content: "";
+    position: absolute;
+    left: -320px;
+    width: 300px;
+    height: 4px;
+    background-color: #5ca3ff;
+}
+.title-map {
+    font-size: 40px;
+    font-weight: bolder;
+    margin-bottom: 15px;
+}
+.desctiption-map {
+    font-size: 18px;
+}
+#footer {
+    display: flex;
+    color: #fff;
+}
+#footer>div {
+    display: inline-block;
+    width: 50%;
+}
+.footer_contacts {
+    padding: 45px;
+    background: #1e1e1e;
+}
+.contact_title {
+    font-size: 30px;
+    font-weight: 400;
+    margin-bottom: 20px;
+}
+.contact_item {
+    margin-bottom: 18px;
+    font-size: 22px;
+    padding-left: 40px;
+}
+.contact_item>i {
+    margin-right: 15px;
+}
+.section_about {
+    background-color: #eee;
+    padding-bottom: 50px;
+}
+.about_us_wrapper {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.about_us_block {
+    display: inline-block;
+    width: 999px;
+    background-color: #fff;
+    padding: 20px;
+    font-size: 20px;
+    font-style: italic;
+    line-height: 25px;
+    letter-spacing: 1px;
+    text-align: left;
+}
+.about_us_block>img {
+    float:left;
+    margin-right: 25px;
+    height: 333px;
+}
 @media(max-width: 1345px) {
     button.contact-btn {
         display: none;
@@ -176,6 +286,19 @@ button.contact-btn {
     .contacts>.number {
         font-size: 1.7em;
         margin-right: 20px;
+    }
+    .service-row>div {
+        width: 100%;
+    }
+    .service-row {
+        display: block;
+        border: 1px solid #3e3e3e;
+    }
+    #footer {
+        display: block;
+    }
+    #footer>div {
+        width: 100%;
     }
 }
 @media (max-width: 630px) {
