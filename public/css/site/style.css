@@ -330,6 +330,7 @@ button.contact-btn {
     font-size: 18px;
     line-height: 24px;
     width: 60%;
+    border: 2px solid #e3e3e3;
     margin: 0 auto;
 }
 @media(max-width: 1345px) {
