@@ -11,7 +11,8 @@
 |
 */
 
-Route::get('/', 'SiteController@index');
+Route::get('/', 'SiteController@index')->name('index');
+Route::get('/blog', 'SiteController@blog')->name('blog');
 
 Auth::routes();
 

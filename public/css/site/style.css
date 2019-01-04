@@ -15,7 +15,7 @@ body {
 .toggle-menu {
     display: none;
 }
-.logo>img {
+.logo>a>img {
     height: 40px;
 }
 .top-line>.menu>ul>li {
@@ -51,6 +51,9 @@ body {
     font-weight: 400;
     font-size: 1.38em;
     padding: 0 15px;
+}
+.blog-header {
+    height: 333px;
 }
 button.blue-btn {
     color: #ffffff;
@@ -167,13 +170,73 @@ button.contact-btn {
     font-size: 36px;
     font-weight: 600;
 }
+.blog-wrapper {
+    width: 90%;
+    display: flex;
+}
+.category-list {
+    width: 40%;
+    padding: 30px;
+    border-left: 3px solid #e3e3e3;
+}
+.category-list>span {
+    font-weight: 600;
+    display: block;
+    text-align: center;
+    margin-bottom: 15px;
+    font-size: 1.45em;
+}
+.category-list>ul>li {
+    list-style-type: none;
+    font-size: 1.35em;
+    margin-bottom: 7px;
+    padding-bottom: 7px;
+    cursor: pointer;
+    border-bottom: 2px solid #e3e3e3;
+}
+.category-list>ul>li>i {
+    margin-right: 8px;
+    color: orange;
+}
+.category-list>ul>li:hover {
+    border-bottom: 2px solid #da671b;
+}
+.article-list {
+    padding: 30px 50px;
+}
+.article-header {
+    font-weight: 600;
+    font-size: 28px;
+    text-align: left;
+    padding-left: 45px;
+    margin-bottom: 20px;
+}
+.article-preview {
+    font-size: 18px;
+    line-height: 24px;
+    margin-bottom: 20px;
+}
+.article-footer {
+    display: flex;
+    justify-content: space-between;
+    font-size: 21px;
+}
+.article {
+    padding-bottom: 40px;
+}
+.article-footer>a {
+    color: #337ab7;
+}
+.article-footer>a:hover {
+    color: #23527c;
+}
 @media (max-width: 1550px) {
     .top-line>.menu>ul>li>a {
         letter-spacing: 0;
         font-size: 1.2em;
         margin: 0 6px;
     }
-    .logo>img {
+    .logo>a>img {
         height: 35px;
     }
     .contacts>.number {
@@ -302,11 +365,14 @@ button.contact-btn {
     }
 }
 @media (max-width: 630px) {
-    .logo>img {
+    .logo>a>img {
         height: 25px;
     }
     .top-line>.contacts>.number {
         font-size: 1.1em;
         margin-right: 0;
+    }
+    .category-list {
+        display: none;
     }
 }

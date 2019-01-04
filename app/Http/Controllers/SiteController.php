@@ -14,4 +14,8 @@ class SiteController extends Controller
     public function index() {
         return view('site.index');
     }
+
+    public function blog() {
+        return view('site.blog');
+    }
 }
