@@ -14,4 +14,8 @@ class AdminController
     public function index() {
         return view('admin.index');
     }
+
+    public function filemanager() {
+        return view('admin.filemanager');
+    }
 }
