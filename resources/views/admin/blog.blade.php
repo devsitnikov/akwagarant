@@ -29,9 +29,29 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Отменить</button>
-                    <button type="button" class="btn btn-primary">Сохранить</button>
+                    <button type="button" class="btn btn-primary save-cat-btn">Сохранить</button>
                 </div>
             </div>
         </div>
     </div>
+
+    <script>
+        window.onload = function() {
+            $('.save-cat-btn').click(function(){
+                $.ajax({
+                    url: '{{route('addCategory')}}',
+                    type: 'POST',
+                    data: {name: $('#inputCatName').val() },
+                    headers: {
+                        'X-CSRF-Token': $('meta[name="csrf-token"]').attr('content')
+                    },
+                    success: function() {
+                        $('#addCatModal').modal('hide');
+                        toastr["info"]("Добавлено!");
+                    }
+                });
+            });
+        }
+
+    </script>
 @endsection

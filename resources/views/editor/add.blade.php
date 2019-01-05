@@ -113,20 +113,18 @@
                         <textarea type="text" id="description" class="md-textarea form-control" rows="3"></textarea>
                         <label for="description">Description</label>
                     </div>
-                    <select class="mdb-select md-form colorful-select dropdown-primary" multiple searchable="Поиск..">
+                    <select class="mdb-select md-form colorful-select dropdown-primary" multiple searchable="Поиск.." id="cats">
                         <option value="" disabled selected>Выбор категории</option>
-                        <option value="1">Категория 1</option>
-                        <option value="2">Категория 2</option>
-                        <option value="3">Категория 3</option>
-                        <option value="4">Категория 4</option>
-                        <option value="5">Категория 5</option>
+                        @foreach ($categories as $category)
+                        <option value="{{$category->id}}">{{$category->name}}</option>
+                            @endforeach;
                     </select>
                     <label>Выбор категории</label>
 
                 </div>
                 <div class="modal-footer justify-content-center">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Закрыть</button>
-                    <button type="button" class="btn btn-primary">Сохранить</button>
+                    <button type="button" class="btn btn-primary save-article-btn">Сохранить</button>
                 </div>
             </div>
         </div>
@@ -153,5 +151,36 @@
             .catch( err => {
                 console.error( err.stack );
             } );
+
+        $('.save-article-btn').click(function(){
+            var name = $('#inputArticleName').val();
+            var title = $('#inputTitle').val();
+            var description = $('#description').val();
+            var categories = $('#cats').val();
+            var content = editor.getData();
+
+            if (name.length < 1 || title.length < 1 || description.length < 1 || categories.length < 1 || content.length < 1 || categories.length < 1) {
+                toastr["error"]("Заполнены не все данные!");
+            } else {
+                $.ajax({
+                    url: '{{route('addArticle')}}',
+                    type: 'POST',
+                    data: {
+                        name: name,
+                        title: title,
+                        description: description,
+                        categories: categories,
+                        content: content
+                    },
+                    headers: {
+                        'X-CSRF-Token': $('meta[name="csrf-token"]').attr('content')
+                    },
+                    success: function(data) {
+                        toastr["info"](data);
+                    }
+                });
+            }
+        });
+
     </script>
 @endsection

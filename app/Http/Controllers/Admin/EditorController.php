@@ -9,11 +9,13 @@
 namespace App\Http\Controllers\Admin;
 
 
+use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\Controller;
 
 class EditorController extends Controller
 {
     public function add(){
-        return view('editor.add');
+        $categories = new CategoryController();
+        return view('editor.add',['categories' => $categories->getCategories()]);
     }
 }

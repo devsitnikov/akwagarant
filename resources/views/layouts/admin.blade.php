@@ -17,7 +17,7 @@
     <![endif]-->
     <link href="{{ asset('js/ckfinder/samples/css/sample.css') }}" rel="stylesheet">
     <title>{{ config('app.name', 'Laravel') }}</title>
-
+    <script src="{{asset('mdbootstrap/js/jquery-3.3.1.min.js')}}"></script>
 
 </head>
 <body class="grey lighten-4">
@@ -59,11 +59,8 @@
         @yield('content')
     </div>
 </main>
-
-
-        <script src="{{asset('mdbootstrap/js/jquery-3.3.1.min.js')}}"></script>
-        <script src="{{asset('mdbootstrap/js/popper.min.js')}}"></script>
-        <script src="{{asset('mdbootstrap/js/bootstrap.min.js')}}"></script>
-        <script src="{{asset('mdbootstrap/js/mdb.min.js')}}"></script>
+<script src="{{asset('mdbootstrap/js/popper.min.js')}}"></script>
+<script src="{{asset('mdbootstrap/js/bootstrap.min.js')}}"></script>
+<script src="{{asset('mdbootstrap/js/mdb.min.js')}}"></script>
 </body>
 </html>
