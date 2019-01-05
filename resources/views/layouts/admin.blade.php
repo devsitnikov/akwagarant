@@ -48,7 +48,7 @@
         </a>
         <div class="list-group list-group-flush">
             <button type="button" class="btn btn-info">Главная</button>
-            <button type="button" class="btn btn-info">Статьи</button>
+            <a href="{{route('manageblog')}}" type="button" class="btn btn-info">Статьи</a>
             <a href="{{route('filemanager')}}" type="button" class="btn btn-info">Файлы</a>
             <button type="button" class="btn btn-info">Настройки</button>
         </div>

@@ -22,6 +22,8 @@ Auth::routes();
  */
 Route::group(['prefix'=>'panel', 'middleware'=>'auth', 'namespace' => 'Admin'], function() {
     Route::get('/', 'AdminController@index');
+    Route::get('/blog', 'AdminController@blog')->name('manageblog');
     Route::get('/filemanager', 'AdminController@filemanager')->name('filemanager');
+    Route::get('/editor/add', 'EditorController@add')->name('addeditor');
 });
 Route::get('/home', 'HomeController@index')->name('home');
