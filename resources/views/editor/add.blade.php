@@ -1,5 +1,9 @@
 @extends('layouts.editor')
 @section('content')
+
+    <script src="{{ asset('js/ckfinder/samples/js/sf.js') }}"></script>
+    <script src="{{ asset('js/ckfinder/samples/js/tree-a.js') }}"></script>
+    @include('ckfinder::setup')
     <div class="main-header blog-header" style="background-image: url('{{asset('img/headbg.jpg')}}')">
         <div class="content">
             <h1 class="header-title">Заголовок статьи</h1>
@@ -7,6 +11,7 @@
     </div>
 
     <div class="article-body">
+        <div id="editor">
         Параметр, несмотря на внешние воздействия, недоступно иллюстрирует Млечный Путь,
         выслеживая яркие, броские образования. Солнечное затмение пространственно неоднородно.
         По космогонической гипотезе Джеймса Джинса, угловая скорость вращения гасит космический афелий .
@@ -63,6 +68,7 @@
         что pадиотелескоп Максвелла интуитивно понятен. Это можно записать следующим образом:
         V = 29.8 * sqrt(2/r – 1/a) км/сек, где огpомная пылевая кома доступна. Метеорит однородно
         выслеживает параметр. Солнечное затмение колеблет маятник Фуко.
+    </div>
     </div>
 
     <button type="button" class="btn btn-danger open-settings-editor" data-toggle="modal" data-target="#settingsModal">Открыть настройки</button>
@@ -89,7 +95,34 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    ...
+
+                    <!-- Material input -->
+                    <div class="md-form">
+                        <input type="text" id="inputArticleName" class="form-control">
+                        <label for="inputArticleName">Название статьи</label>
+                    </div>
+
+                    <!-- Material input -->
+                    <div class="md-form">
+                        <input type="text" id="inputTitle" class="form-control">
+                        <label for="inputTitle">Title</label>
+                    </div>
+
+                    <!--Basic textarea-->
+                    <div class="md-form amber-textarea active-amber-textarea-2">
+                        <textarea type="text" id="description" class="md-textarea form-control" rows="3"></textarea>
+                        <label for="description">Description</label>
+                    </div>
+                    <select class="mdb-select md-form colorful-select dropdown-primary" multiple searchable="Поиск..">
+                        <option value="" disabled selected>Выбор категории</option>
+                        <option value="1">Категория 1</option>
+                        <option value="2">Категория 2</option>
+                        <option value="3">Категория 3</option>
+                        <option value="4">Категория 4</option>
+                        <option value="5">Категория 5</option>
+                    </select>
+                    <label>Выбор категории</label>
+
                 </div>
                 <div class="modal-footer justify-content-center">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Закрыть</button>
@@ -99,4 +132,26 @@
         </div>
     </div>
     <!-- Full Height Modal Right -->
+    <script>
+        $(document).ready(function() {
+            $('.mdb-select').material_select();
+        });
+    </script>
+    <script>
+        InlineEditor
+            .create( document.querySelector( '#editor' ), {
+                ckfinder: {
+                    uploadUrl: '/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Files',
+                },
+                toolbar: [ 'ckfinder', '|', 'heading', '|', 'bold', 'italic', 'link', 'bulletedList', 'numberedList', 'blockQuote', 'insertTable'],
+                // toolbar: [ 'heading', '|', 'bold', 'italic', 'link' ]toolbar: [ 'insertTable',
+                language: 'ru'
+            } )
+            .then( editor => {
+                window.editor = editor;
+            } )
+            .catch( err => {
+                console.error( err.stack );
+            } );
+    </script>
 @endsection

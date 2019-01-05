@@ -8,7 +8,6 @@
     <title>Компания Аквагарант</title>
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <link rel="stylesheet" href="{{asset('css/site/style.css')}}">
     <script src="{{asset('js/app.js')}}"></script>
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css">
@@ -16,6 +15,10 @@
     <link rel="stylesheet" href="{{asset('mdbootstrap/css/mdb.min.css')}}">
     <link rel="stylesheet" href="{{asset('mdbootstrap/css/style.css')}}">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
+    <script src="{{asset('ckeditor5/ckeditor.js')}}"></script>
+    <script src="{{asset('ckeditor5/translations/ru.js')}}"></script>
+
+    <link rel="stylesheet" href="{{asset('css/site/style.css')}}">
 </head>
 <body>
 
@@ -71,6 +74,9 @@
         <li><a href="#">Контакты</a></li>
     </ul>
 </div>
-
+<script src="{{asset('mdbootstrap/js/jquery-3.3.1.min.js')}}"></script>
+<script src="{{asset('mdbootstrap/js/popper.min.js')}}"></script>
+<script src="{{asset('mdbootstrap/js/bootstrap.min.js')}}"></script>
+<script src="{{asset('mdbootstrap/js/mdb.min.js')}}"></script>
 </body>
 </html>
