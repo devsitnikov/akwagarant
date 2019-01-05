@@ -13,15 +13,19 @@
 
 Route::get('/', 'SiteController@index')->name('index');
 Route::get('/blog', 'SiteController@blog')->name('blog');
-Route::get('/blog/{slug}', 'SiteController@article');
+Route::get('/blog/{article}', 'SiteController@article')->name('article');
 
 Auth::routes();
 
 /**
  * Роуты для админки
  */
-Route::group(['prefix'=>'panel', 'middleware'=>'auth', 'namespace' => 'Admin'], function() {
-    Route::get('/', 'AdminController@index');
-    Route::get('/filemanager', 'AdminController@filemanager')->name('filemanager');
+Route::group(['prefix'=>'panel', 'middleware'=>'auth'], function() {
+    Route::get('/', 'Admin\AdminController@index');
+    Route::post('/addcategory', 'CategoryController@save')->name('addCategory');
+    Route::post('/addarticle', 'ArticleController@save')->name('addArticle');
+    Route::get('/blog', 'Admin\AdminController@blog')->name('manageblog');
+    Route::get('/filemanager', 'Admin\AdminController@filemanager')->name('filemanager');
+    Route::get('/editor/add', 'Admin\EditorController@add')->name('addeditor');
 });
 Route::get('/home', 'HomeController@index')->name('home');

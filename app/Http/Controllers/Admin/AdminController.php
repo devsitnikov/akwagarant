@@ -18,4 +18,8 @@ class AdminController
     public function filemanager() {
         return view('admin.filemanager');
     }
+
+    public function blog() {
+        return view('admin.blog');
+    }
 }
