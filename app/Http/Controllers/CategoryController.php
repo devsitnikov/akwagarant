@@ -23,6 +23,14 @@ class CategoryController extends Controller
     }
 
     public function getCategories() {
-        return Category::get();
+        $categories = new Category();
+        return $categories->get();
+    }
+
+    public function deleteCategory(Request $request) {
+        $category = Category::find($request->id);
+        $category->articles()->detach();
+        $category->delete();
+
     }
 }

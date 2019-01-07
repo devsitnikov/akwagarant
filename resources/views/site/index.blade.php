@@ -123,7 +123,7 @@
          </div>
      </div>
 
-     <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Afe3a82a182454d6dc71f1876a08cdcbe9ecc3cce168a59ffbef77a780df69d1e&amp;width=100%25&amp;height=699&amp;lang=ru_RU&amp;scroll=false"></script>
+     <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A1bc6806793a24872f423f2013c0ac776d9f589dce4bf9f3e465c524fbc1d851d&amp;width=100%25&amp;height=551&amp;lang=ru_RU&amp;scroll=true"></script>
  </div>
     <div class="section_about">
         <div class="section-title">О компании</div>

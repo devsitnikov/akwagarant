@@ -39,4 +39,29 @@ class ArticleController extends Controller
         $url = route('article',[$slug]);
         return 'Статья добавлена <br>' . '<a href="' . $url . '" class="text-danger"> <span class="text-danger"><b>Перейти к статье</b></span></a>';
     }
+
+    public function getArticles() {
+        $articles = new Article();
+        return $articles->has('categories')->get();
+    }
+
+    public function deleteArticles(Request $request) {
+        $article = Article::find($request->id);
+        $article->categories()->detach();
+        $article->delete();
+    }
+
+    public function updateArticle(Request $request) {
+        $article = Article::find($request->id);
+        $categories = [];
+        foreach($request->categories as $category) {
+            $categories[] = $category;
+        }
+        $article->update($request->all());
+        $article->categories()->detach();
+        $article->categories()->attach($categories);
+        $slug = \Slug::make($request->name);
+        $url = route('article',[$slug]);
+        return 'Статья обновлена <br>' . '<a href="' . $url . '" class="text-danger"> <span class="text-danger"><b>Перейти к статье</b></span></a>';
+    }
 }
