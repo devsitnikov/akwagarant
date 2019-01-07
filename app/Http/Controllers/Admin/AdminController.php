@@ -9,6 +9,9 @@
 namespace App\Http\Controllers\Admin;
 
 
+use App\Http\Controllers\ArticleController;
+use App\Http\Controllers\CategoryController;
+
 class AdminController
 {
     public function index() {
@@ -20,6 +23,8 @@ class AdminController
     }
 
     public function blog() {
-        return view('admin.blog');
+        $categories = new CategoryController();
+        $articles = new ArticleController();
+        return view('admin.blog',['articles' => $articles->getArticles(), 'categories' => $categories->getCategories()]);
     }
 }

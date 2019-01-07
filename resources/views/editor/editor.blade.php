@@ -6,27 +6,14 @@
     @include('ckfinder::setup')
     <div class="main-header blog-header" style="background-image: url('{{asset('img/headbg.jpg')}}')">
         <div class="content">
-            <h1 class="header-title">Заголовок статьи</h1>
+            <h1 class="header-title">{{$article->name}}</h1>
         </div>
     </div>
 
     <div class="article-body">
         <div id="editor">
-        Параметр, несмотря на внешние воздействия, недоступно иллюстрирует Млечный Путь,
-        выслеживая яркие, броские образования. Солнечное затмение пространственно неоднородно.
-        По космогонической гипотезе Джеймса Джинса, угловая скорость вращения гасит космический афелий .
-
-        Нулевой меридиан жизненно колеблет маятник Фуко. Земная группа формировалась ближе к Солнцу, однако
-        уравнение времени отражает эллиптический Юпитер, тем не менее, уже 4,5 млрд лет расстояние нашей планеты от
-        Солнца практически не меняется. Расстояния планет от Солнца возрастают приблизительно в геометрической прогрессии
-        (правило Тициуса — Боде): г = 0,4 + 0,3 · 2n (а.е.), где атомное время постоянно.
-        Эффективный диаметp притягивает Каллисто. Как было показано выше, уравнение времени
-        последовательно оценивает Южный Треугольник. Конечно, нельзя не принять во внимание тот факт,
-        что pадиотелескоп Максвелла интуитивно понятен. Это можно записать следующим образом:
-        V = 29.8 * sqrt(2/r – 1/a) км/сек, где огpомная пылевая кома доступна. Метеорит однородно
-        выслеживает параметр. Солнечное затмение колеблет маятник Фуко.
-
-    </div>
+            {!! $article->content !!}
+        </div>
     </div>
 
     <button type="button" class="btn btn-danger open-settings-editor" data-toggle="modal" data-target="#settingsModal">Открыть настройки</button>
@@ -56,26 +43,26 @@
 
                     <!-- Material input -->
                     <div class="md-form">
-                        <input type="text" id="inputArticleName" class="form-control">
+                        <input type="text" id="inputArticleName" class="form-control" value="{{$article->name}}">
                         <label for="inputArticleName">Название статьи</label>
                     </div>
 
                     <!-- Material input -->
                     <div class="md-form">
-                        <input type="text" id="inputTitle" class="form-control">
+                        <input type="text" id="inputTitle" class="form-control" value="{{$article->title}}">
                         <label for="inputTitle">Title</label>
                     </div>
 
                     <!--Basic textarea-->
                     <div class="md-form amber-textarea active-amber-textarea-2">
-                        <textarea type="text" id="description" class="md-textarea form-control" rows="3"></textarea>
+                        <textarea type="text" id="description" class="md-textarea form-control" rows="3">{{$article->description}}</textarea>
                         <label for="description">Description</label>
                     </div>
                     <select class="mdb-select md-form colorful-select dropdown-primary" multiple searchable="Поиск.." id="cats">
                         <option value="" disabled selected>Выбор категории</option>
                         @foreach ($categories as $category)
-                        <option value="{{$category->id}}">{{$category->name}}</option>
-                            @endforeach;
+                            <option value="{{$category->id}}">{{$category->name}}</option>
+                        @endforeach;
                     </select>
 
                 </div>
@@ -120,9 +107,11 @@
                 toastr["error"]("Заполнены не все данные!");
             } else {
                 $.ajax({
-                    url: '{{route('addArticle')}}',
+                    url: '{{route('updateArticle')}}',
                     type: 'POST',
                     data: {
+
+                        id: '{{$article->id}}',
                         name: name,
                         title: title,
                         description: description,

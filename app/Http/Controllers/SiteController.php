@@ -18,7 +18,9 @@ class SiteController extends Controller
     }
 
     public function blog() {
-        return view('site.blog');
+        $articles = new ArticleController();
+        $categories = new CategoryController();
+        return view('site.blog', ['articles' => $articles->getArticles(),'categories' => $categories->getCategories()]);
     }
 
     public function article(Article $article) {
